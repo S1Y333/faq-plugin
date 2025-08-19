@@ -1,0 +1,29 @@
+<?php
+class FAQ_Shortcode {
+    public static function render() {
+        $args = [
+            'post_type' => 'faq',
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'ASC'
+        ];
+        $faqs = new WP_Query($args);
+
+        if ($faqs->have_posts()) {
+            $output = '<div class="faq-list">';
+            while ($faqs->have_posts()) {
+                $faqs->the_post();
+                $output .= '<div class="faq-item">';
+                $output .= '<h3 class="faq-question">' . get_the_title() . '</h3>';
+                $output .= '<div class="faq-answer" style="display:none;">' . get_the_content() . '</div>';
+                $output .= '</div>';
+            }
+            $output .= '</div>';
+            wp_reset_postdata();
+        } else {
+            $output = '<p>No FAQs found.</p>';
+        }
+
+        return $output;
+    }
+}
