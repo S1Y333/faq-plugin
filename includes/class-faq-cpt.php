@@ -1,5 +1,3 @@
-<!-- (Register FAQ Custom Post Type(CPT)) -->
-
 <?php
 class FAQ_CPT {
     public static function register() {
@@ -17,6 +15,7 @@ class FAQ_CPT {
             'show_in_menu' => true,
             'menu_icon' => 'dashicons-editor-help',
             'supports' => ['title', 'editor'],
+             'rewrite' => ['slug' => 'faqs'],
         ];
 
         register_post_type('faq', $args);

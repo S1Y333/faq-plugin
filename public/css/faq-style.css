@@ -12,3 +12,28 @@
 .faq-answer {
     margin-top: 8px;
 }
+
+.faq-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-toggle .toggle-icon {
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+}
+
+/* When accordion is open, show minus instead of plus */
+.faq-toggle:not(.collapsed) .toggle-icon::before {
+    content: "\f068"; /* fa-minus (unicode) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+/* Reset collapsed state (fa-plus) */
+.faq-toggle.collapsed .toggle-icon::before {
+    content: "\f067"; /* fa-plus */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
