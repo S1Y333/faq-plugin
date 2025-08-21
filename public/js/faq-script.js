@@ -15,3 +15,8 @@ jQuery(document).ready(function($) {
     });
 });
 
+document.querySelectorAll('.faq-question-container').forEach(container => {
+  container.addEventListener('click', () => {
+    container.querySelector('.icon-wrapper').classList.toggle('open');
+  });
+});
