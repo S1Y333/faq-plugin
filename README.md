@@ -33,30 +33,29 @@ This plugin registers a custom post type **FAQ**, and displays them in a respons
 
 ## 📂 Folder Structures
 
-/faq-manager/
+faq-manager/
+├── faq-manager.php # Main plugin file
+├── uninstall.php # Cleanup on uninstall (optional)
 │
-├── faq-manager.php                # Main plugin file
-├── uninstall.php                  # Cleanup (optional)
+├── /admin/
+│ ├── class-faq-admin.php # Handles custom admin menu (optional)
+│ └── /views/
+│ ├── faq-list.php # Custom FAQ admin list page (optional)
+│ └── faq-form.php # Custom add/edit FAQ form (optional)
 │
-├── /admin/                        
-│   ├── class-faq-admin.php        # Optional Handles custom admin menu (if needed)
-│   ├── views/                     
-│   │   ├── faq-list.php           # Optional custom FAQ admin page
-│   │   ├── faq-form.php           # Optional add/edit FAQ form
+├── /includes/
+│ ├── class-faq-cpt.php # Registers FAQ custom post type
+│ └── class-faq-shortcode.php # Shortcode for frontend display
 │
-├── /includes/                     
-│   ├── class-faq-cpt.php          # Registers FAQ CPT
-│   ├── class-faq-shortcode.php    # Shortcode for frontend display
+├── /public/
+│ ├── /css/
+│ │ └── faq-style.css # FAQ styling
+│ ├── /js/
+│ │ └── faq-script.js # Toggle/accordion behavior
+│ └── class-faq-frontend.php # Enqueue scripts & styles
 │
-├── /public/                       
-│   ├── css/
-│   │   └── faq-style.css          # FAQ styling
-│   ├── js/
-│   │   └── faq-script.js          # Toggle/accordion behavior
-│   ├── class-faq-frontend.php     # Enqueue scripts + css assets
-│
-└── /languages/                    
-    └── faq-manager.pot
+└── /languages/
+└── faq-manager.pot # Translation template
 
 ---
 
