@@ -2,7 +2,7 @@
     margin: 20px 0;
 }
 .faq-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px dashed #8a8787;
     padding: 10px 0;
 }
 .faq-question {
@@ -10,7 +10,13 @@
     font-weight: bold;
 }
 .faq-answer {
-    margin-top: 8px;
+    margin-top: 10px;
+}
+
+.faq-question-container {
+    cursor: pointer;
+    padding: 10px 0;
+
 }
 
 

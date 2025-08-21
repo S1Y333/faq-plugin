@@ -18,7 +18,7 @@ class FAQ_Shortcode {
                    <div class="d-flex justify-content-between align-items-center faq-question-container">
                    <h3 class="faq-question">' . get_the_title() . 
                    '</h3>
-                   <i class="fa-solid fa-plus"></i>
+                   <i class="fa-solid fa-plus cursor-pointer"></i>
                    </div>';
                 $output .= '<div class="faq-answer" style="display:none;">' . get_the_content() . '</div>';
                 $output .= '</div>';
