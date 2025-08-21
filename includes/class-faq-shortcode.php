@@ -9,47 +9,20 @@ class FAQ_Shortcode {
         ];
         $faqs = new WP_Query($args);
 
-        // if ($faqs->have_posts()) {
-        //     $output = '<div class="faq-list">';
-        //     while ($faqs->have_posts()) {
-        //         $faqs->the_post();
-        //         $output .= '<div class="faq-item">';
-        //         $output .= '<h3 class="faq-question">' . get_the_title() . '</h3>';
-        //         $output .= '<div class="faq-answer" style="display:none;">' . get_the_content() . '</div>';
-        //         $output .= '</div>';
-        //     }
-        //     $output .= '</div>';
-        //     wp_reset_postdata();
-        // } else {
-        //     $output = '<p>No FAQs found.</p>';
-        // }
-
-        // return $output;
-
-          if ($faqs->have_posts()) {
-            $output = '<div class="accordion" id="faqAccordion">';
-            $count = 0;
-
+        if ($faqs->have_posts()) {
+            $output = '<div class="faq-list">';
             while ($faqs->have_posts()) {
                 $faqs->the_post();
-                $count++;
-
+                $output .= '<div class="faq-item">';
                 $output .= '
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading'.$count.'">
-                        <button class="accordion-button collapsed faq-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapse'.$count.'" aria-expanded="false" aria-controls="collapse'.$count.'"> 
-                            '.esc_html(get_the_title()).' 
-                            <i class="fa-solid fa-plus toggle-icon"></i> 
-                        </button>
-                    </h2>
-                    <div id="collapse'.$count.'" class="accordion-collapse collapse" aria-labelledby="heading'.$count.'" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            '.apply_filters("the_content", get_the_content()).'
-                        </div>
-                    </div>
-                </div>';
+                   <div class="d-flex justify-content-between align-items-center faq-question-container">
+                   <h3 class="faq-question">' . get_the_title() . 
+                   '</h3>
+                   <i class="fa-solid fa-plus"></i>
+                   </div>';
+                $output .= '<div class="faq-answer" style="display:none;">' . get_the_content() . '</div>';
+                $output .= '</div>';
             }
-
             $output .= '</div>';
             wp_reset_postdata();
         } else {
@@ -57,5 +30,32 @@ class FAQ_Shortcode {
         }
 
         return $output;
+
+        //   if ($faqs->have_posts()) {
+        //     $output = '<div class="accordion" id="faqAccordion">';
+        //     $count = 0;
+
+        //     while ($faqs->have_posts()) { 
+        //         $faqs->the_post(); 
+        //         $count++; 
+        //         $output .= ' 
+        //         <div class="accordion-item"> 
+        //             <h2 class="accordion-header" id="heading'.$count.'"> 
+        //                 <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapse'.$count.'" aria-expanded="false" aria-controls="collapse'.$count.'"> 
+        //                     '.esc_html(get_the_title()).' 
+        //                 </button> 
+        //             </h2> 
+        //             <div id="collapse'.$count.'" class="accordion-collapse collapse" aria-labelledby="heading'.$count.'" data-bs-parent="#faqAccordion"> 
+        //               <div class="accordion-body"> 
+        //             '.apply_filters("the_content", get_the_content()).' 
+        //             </div> 
+        //         </div> 
+        //         </div>'; } 
+        //         $output .= '</div>'; wp_reset_postdata(); }
+        //     else {
+        //     $output = '<p>No FAQs found.</p>';
+        // }
+
+        // return $output;
     }
 }
