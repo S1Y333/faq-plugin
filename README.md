@@ -32,30 +32,7 @@ This plugin registers a custom post type **FAQ**, and displays them in a respons
 ---
 
 ## 📂 Folder Structures
-
-faq-manager/
-├── faq-manager.php # Main plugin file
-├── uninstall.php # Cleanup on uninstall (optional)
-│
-├── /admin/
-│ ├── class-faq-admin.php # Handles custom admin menu (optional)
-│ └── /views/
-│ ├── faq-list.php # Custom FAQ admin list page (optional)
-│ └── faq-form.php # Custom add/edit FAQ form (optional)
-│
-├── /includes/
-│ ├── class-faq-cpt.php # Registers FAQ custom post type
-│ └── class-faq-shortcode.php # Shortcode for frontend display
-│
-├── /public/
-│ ├── /css/
-│ │ └── faq-style.css # FAQ styling
-│ ├── /js/
-│ │ └── faq-script.js # Toggle/accordion behavior
-│ └── class-faq-frontend.php # Enqueue scripts & styles
-│
-└── /languages/
-└── faq-manager.pot # Translation template
+<img width="1343" height="930" alt="Screenshot 2025-08-21 161235" src="https://github.com/user-attachments/assets/122fbb49-fd1a-48b5-8dd5-2e2b9956c659" />
 
 ---
 
