@@ -3,7 +3,7 @@
  * Plugin Name: FAQ Manager
  * Description: Manage and display FAQs with a shortcode [faq_list].
  * Version: 1.0
- * Author: Your Name
+ * Author: XXSylviaXX
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
